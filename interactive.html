@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post {
+            margin-bottom: 20px;
+        }
+
+        .post h2 {
+            color: #333;
+        }
+
+        .post p {
+            margin: 10px 0;
+        }
+
+        .like-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-button:hover {
+            background: #ff3f31;
+        }
+
+        .like-count {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function likePost(postId) {
+            const countElement = document.getElementById(`like-count-${postId}`);
+            let count = parseInt(countElement.innerText);
+            count++;
+            countElement.innerText = count;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Blog</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="post">
+            <h2>Post Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <button class="like-button" onclick="likePost(1)">Like</button>
+            <span id="like-count-1" class="like-count">0</span>
+        </div>
+        <div class="post">
+            <h2>Post Title 2</h2>
+            <p>Nullam at tortor et ligula placerat bibendum non at sapien. Sed ac quam euismod, bibendum nulla vel, commodo odio.</p>
+            <button class="like-button" onclick="likePost(2)">Like</button>
+            <span id="like-count-2" class="like-count">0</span>
+        </div>
+        <div class="post">
+            <h2>Post Title 3</h2>
+            <p>Fusce vulputate lorem non metus ultricies, ac posuere nunc convallis. Praesent sit amet nunc eu nisi faucibus consequat.</p>
+            <button class="like-button" onclick="likePost(3)">Like</button>
+            <span id="like-count-3" class="like-count">0</span>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Interactive Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
